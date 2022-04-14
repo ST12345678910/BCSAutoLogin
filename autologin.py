@@ -1,3 +1,5 @@
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 from logging import error
 from selenium import webdriver
 import schedule
@@ -11,8 +13,10 @@ options.add_experimental_option("detach", True)
 username = "yourusername"
 password = "yourpassword"
 
+
 def AutoLoginBCS():
-    driver = webdriver.Chrome(options=options, executable_path='/Users/shaun/Desktop/PythonTestProject/chromedriver')
+    driver = webdriver.Chrome(service=Service(
+        ChromeDriverManager().install()), options=options)
 
     driver.get("https://bootcampspot.com/login")
 
@@ -26,14 +30,14 @@ def AutoLoginBCS():
     lambda x: x.execute_script("return document.readyState === 'complete'")
     )
 
-    LoggedIn = driver.find_element(By.CLASS_NAME, "btn-submit")
-    # LoggedIn = driver.find_element(By.CLASS_NAME, "virtualclassroom")
-    if (LoggedIn):
-        print("\033[;32mLogin Success\033[0m\n")
-    else:
-        print("test")
+    print("\033[;32mLogging In...\033[0m\n")
 
 
-# schedule.every().day.at("09:15").do(AutoLoginBCS)
-AutoLoginBCS()
-# driver.close()
+    driver.implicitly_wait(10)
+
+    driver.find_element(By.LINK_TEXT, "JOIN CLASS").click()
+    print("\033[;32mJoining Meeting...\033[0m\n")
+
+schedule.every().day.at("09:15").do(AutoLoginBCS)
+
+# AutoLoginBCS()
