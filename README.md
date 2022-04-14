@@ -11,7 +11,7 @@
 - [Tests](#tests)
 - [Questions](#questions)
 ## Installation
-To install, <code>pip3 install -r requirements.txt</code>. If the user does not want to install requirements globally, they can create a virtual environment.
+To install, <code>pip3 install -r requirements.txt</code>. The user will also have to place an [An OS Compatible ChromeDriver](https://chromedriver.storage.googleapis.com/index.html?path=100.0.4896.60/) into the root directory so that the script can open Chrome on your device. If the user does not want to install requirements globally, they can create a virtual environment.
 ## Usage
  Run <code>python3 BCSAutoLogin</code>, then wait until the time specified. You can also remove the bottom schedule and replace it with the function end, this way the script can be run manually. 
 ## Contributing
