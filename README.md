@@ -2,7 +2,7 @@
 <img src="https://img.shields.io/badge/License-MIT-blue.svg">
 
 ## Description
- A simple Python script (Python3), that automatically logs a student into Bootcamp Spot and joins the daily meeting every day, at a time the user specifies. 
+ A simple Python script (Python3) utilizing Selenium, that automatically logs a student into Bootcamp Spot and joins the daily meeting every day, at a time the user specifies. 
 
 ## Table of Contents
 - [Installation](#installation)
