@@ -3,6 +3,7 @@
 
 ## Description
  A simple Python script (Python3) utilizing Selenium, that automatically logs a student into Bootcamp Spot and joins the daily meeting every day, at a time the user specifies. 
+## Demo/Walkthrough: 
 
 ## Table of Contents
 - [Installation](#installation)
